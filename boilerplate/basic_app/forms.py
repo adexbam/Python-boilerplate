@@ -10,8 +10,19 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('username', 'email', 'password')
 
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'password': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
 
 class UserProfileInfoForm(forms.ModelForm):
     class Meta():
         model = UserProfileInfo
         fields = ('portfolio_site', 'profile_pic')
+
+        widgets = {
+            'portfolio_site': forms.TextInput(attrs={'class': 'form-control'}),
+            'profile_pic': forms.FileInput(attrs={'class': "btn btn-primary"}),
+        }

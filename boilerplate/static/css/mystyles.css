@@ -1,0 +1,49 @@
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.reg-form-signin {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#id_username input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-primary-spacing {
+    margin-right: 5px;
+    margin-bottom: 5px !important;
+}
+
+/* || Jumbotron */
+.jumbotron-lnd {
+  height: calc(100vh - 57.69px);
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/bg_design.png);
+  background-size: cover;
+}
+
+@media screen and (max-width: 575.98px) {
+  .jumbotron-lnd h1,h3 {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-top: 2rem;
+  }
+}
+

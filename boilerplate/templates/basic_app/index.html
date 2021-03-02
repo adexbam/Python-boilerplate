@@ -1,15 +1,61 @@
 {% extends "basic_app/base.html" %}
+{% load static %}
 {% block body_block %}
 
-<div class="container">
-  <div class="jumbotron">
-    <h1>Home Page</h1>
-    {% if user.is_authenticated %}
-        <h2>Welcome {{ user.username }}!</h2>
-    {% else %}
-        <h2>Welcome to the site!</h2>
-    {% endif %}
-  </div>
-</div>
+    <div class="jumbotron-lnd bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <h1>Python Full Stack Web Development!</h1>
+            {% if user.is_authenticated %}
+            <h3>Welcome {{ user.username }}!</h3>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for
+              calling extra attention to featured content or information.
+            </p>
+            <hr class="my-4">
+            <div class="d-flex flex-column flex-lg-row">
+                <a class="btn btn-primary btn-primary-spacing  font-weight-bold mb-3 mb-lg-0" href="{% url 'special' %}" role="button">
+                  Get Started!
+                </a>
+                <a
+                  class="btn btn-dark font-weight-bold ml-lg-3"
+                  href="{% url 'special' %}"
+                  role="button"
+                >
+                  Learn more
+                </a>
+            </div>
+            {% else %}
+            <h3>Welcome!</h3>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for
+              calling extra attention to featured content or information.
+            </p>
+            <hr class="my-4">
+            <div class="d-flex flex-column flex-lg-row">
+                <a class="btn btn-primary btn-primary-spacing  font-weight-bold mb-3 mb-lg-0" href="{% url 'basic_app:register' %}" role="button">
+                  Get Started!
+                </a>
+                <a
+                  class="btn btn-dark font-weight-bold ml-lg-3"
+                  href="{% url 'basic_app:user_login' %}"
+                  role="button"
+                >
+                  Learn more
+                </a>
+            </div>
+            {% endif %}
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img
+              src="{% static 'img/undraw_Code_thinking.svg' %}"
+              alt="jumbotron-image"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
 
 {% endblock %}
